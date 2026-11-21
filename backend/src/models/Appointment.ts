@@ -10,17 +10,11 @@ const appointmentSchema = new Schema(
     reason: String,
     status: {
       type: String,
-      enum: ["pending", "confirmed", "completed", "cancelled"],
+      enum: ["pending", "confirmed", "cancelled"],
       default: "pending",
     },
-    result: String, // Kết quả khám do bác sĩ ghi khi hoàn thành lịch hẹn.
   },
   { timestamps: true }
 );
 
-// Chỉ lịch chưa hủy mới chiếm chỗ. Index còn bảo vệ khi có request đồng thời.
-appointmentSchema.index({ doctor: 1, date: 1, timeSlot: 1 }, {
-  unique: true,
-  partialFilterExpression: { status: { $in: ["pending", "confirmed", "completed"] } },
-});
 export default model("Appointment", appointmentSchema);
