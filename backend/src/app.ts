@@ -3,6 +3,7 @@ import cors from "cors";
 import doctorRoutes from "./routes/doctor.routes";
 import appointmentRoutes from "./routes/appointment.routes";
 import { errorHandler } from "./middlewares/errorHandler";
+import scheduleRoutes from "./routes/schedule.routes";
 
 const app = express();
 
@@ -12,6 +13,8 @@ app.use(express.json());
 app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
 app.use("/api/doctors", doctorRoutes);
 app.use("/api/appointments", appointmentRoutes);
+app.use("/api/schedules", scheduleRoutes);
+app.use((_req, res) => { res.status(404).json({ message: "API không tồn tại" }); });
 
 app.use(errorHandler);
 
