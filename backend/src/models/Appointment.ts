@@ -1,25 +1,29 @@
 import { Schema, model } from "mongoose";
 
-// Luồng trạng thái (D kiểm tra khi đổi trạng thái):
-// pending -> confirmed -> completed;  pending/confirmed -> cancelled
 const appointmentSchema = new Schema(
   {
-    // Người đặt (lấy từ token, KHÔNG nhận từ body)
+    //patient ->>	Tham chiếu tới User đặt lịch.
+    // Lấy từ token đăng nhập, không nhận từ body request (tránh giả mạo người đặt).
     patient: { type: Schema.Types.ObjectId, ref: "User", required: true },
-    // Bản chụp tên/SĐT lúc đặt: bác sĩ xem lịch không cần populate,
-    // và đổi tên tài khoản sau này không làm sai hồ sơ cũ.
+    //patientName, phone ->>	Bản chụp (snapshot) tên và SĐT tại thời điểm đặt.
+    // Bác sĩ xem lịch không cần populate, và nếu bệnh nhân đổi tên tài khoản sau này thì hồ sơ cũ vẫn đúng.
     patientName: { type: String, required: true },
     phone: { type: String, required: true },
+    //doctor -->	Tham chiếu tới Doctor được đặt.
     doctor: { type: Schema.Types.ObjectId, ref: "Doctor", required: true },
-    // Lưu như "nhãn ngày" ở 00:00 UTC (cùng quy ước với D: utils/time.ts -> parseDate)
+    // date --> Ngày khám, lưu dạng "nhãn ngày" lúc 00:00 UTC (thống nhất cách xử lý múi giờ với hàm parseDate).
     date: { type: Date, required: true },
-    timeSlot: { type: String, required: true }, // "HH:mm"
+    //timeSlot -->	Khung giờ dạng chuỗi "HH:mm", ví dụ "09:36".
+    timeSlot: { type: String, required: true },
+    //reason -->	Lý do khám (có trim để cắt khoảng trắng thừa).
     reason: { type: String, required: true, trim: true },
+    //status -->	Trạng thái lịch, mặc định pending.
     status: {
       type: String,
       enum: ["pending", "confirmed", "completed", "cancelled"],
       default: "pending",
     },
+    //result -->	Kết quả khám, bác sĩ ghi khi hoàn thành.
     result: { type: String }, // kết quả khám, do bác sĩ ghi khi hoàn thành
   },
   { timestamps: true },
