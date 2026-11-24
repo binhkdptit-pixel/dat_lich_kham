@@ -1,8 +1,6 @@
 import api from "./axios";
 import { DoctorLite, Specialty, toDoctorLite } from "../types/appointment";
 
-// Bật dữ liệu giả khi API của A/B/D chưa có: đặt VITE_USE_MOCK=true trong frontend/.env
-// Khi các API thật đã chạy: xoá dòng đó (hoặc để false) là xong, không phải sửa code.
 export const USE_MOCK = import.meta.env.VITE_USE_MOCK === "true";
 
 const MOCK_SPECIALTIES: Specialty[] = [
