@@ -18,3 +18,21 @@ export interface Appointment {
   reason?: string;
   status: AppointmentStatus;
 }
+
+export type Role = "patient" | "doctor" | "admin";
+
+export interface User {
+  _id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  role: Role;
+  isActive: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface AuthResponse {
+  token: string;
+  user: User;
+}
