@@ -6,11 +6,13 @@ import doctorRoutes from "./routes/doctor.routes";
 import appointmentRoutes from "./routes/appointment.routes";
 import { notFound } from "./middlewares/notFound";
 import { errorHandler } from "./middlewares/errorHandler";
+import specialtyRoutes from "./routes/specialty.routes";
 
 const app = express();
 
 app.use(cors({ origin: process.env.CLIENT_URL }));
 app.use(express.json());
+app.use("/api/specialties", specialtyRoutes);
 
 app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
 
