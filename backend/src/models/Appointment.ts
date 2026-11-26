@@ -3,10 +3,10 @@ import { Schema, model } from "mongoose";
 const appointmentSchema = new Schema(
   {
     //patient ->>	Tham chiếu tới User đặt lịch.
-    // Lấy từ token đăng nhập, không nhận từ body request (tránh giả mạo người đặt).
+    // lấy từ token đăng nhập, không nhận từ body request (tránh giả mạo người đặt).
     patient: { type: Schema.Types.ObjectId, ref: "User", required: true },
     //patientName, phone ->>	Bản chụp (snapshot) tên và SĐT tại thời điểm đặt.
-    // Bác sĩ xem lịch không cần populate, và nếu bệnh nhân đổi tên tài khoản sau này thì hồ sơ cũ vẫn đúng.
+    // bác sĩ xem lịch không cần populate, và nếu bệnh nhân đổi tên tài khoản sau này thì hồ sơ cũ vẫn đúng.
     patientName: { type: String, required: true },
     phone: { type: String, required: true },
     //doctor -->	Tham chiếu tới Doctor được đặt.
@@ -29,8 +29,8 @@ const appointmentSchema = new Schema(
   { timestamps: true },
 );
 
-// Lớp bảo vệ cuối cùng chống đặt trùng: chỉ lịch CHƯA huỷ mới chiếm khung giờ.
-// Huỷ lịch (status = cancelled) thì bản ghi không còn nằm trong index -> khung giờ được nhả.
+// lớp bảo vệ cuối cùng chống đặt trùng: chỉ lịch chưa huỷ mới chiếm khung giờ.
+// huỷ lịch (status = cancelled) thì bản ghi không còn nằm trong index -> khung giờ được nhả.
 appointmentSchema.index(
   { doctor: 1, date: 1, timeSlot: 1 },
   {
