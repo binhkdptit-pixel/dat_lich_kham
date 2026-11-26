@@ -7,7 +7,7 @@ const MOCK_SPECIALTIES: Specialty[] = [
   { _id: "sp1", name: "Nội tổng quát" },
   { _id: "sp2", name: "Nhi khoa" },
 ];
-const MOCK_DOCTORS: DoctorLite[] = [
+export const MOCK_DOCTORS: DoctorLite[] = [
   {
     _id: "d1",
     name: "BS. Phạm Quốc Dũng",
