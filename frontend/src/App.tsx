@@ -9,6 +9,7 @@ import AdminLayout from "./layouts/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
 import DoctorManagement from "./pages/admin/DoctorManagement";
 import AppointmentManagement from "./pages/admin/AppointmentManagement";
+import UserManagement from "./pages/admin/UserManagement";
 
 import DoctorLayout from "./layouts/DoctorLayout";
 import Schedule from "./pages/doctor/Schedule";
@@ -35,6 +36,7 @@ export default function App() {
           <Route index element={<Dashboard />} />
           <Route path="bac-si" element={<DoctorManagement />} />
           <Route path="lich-hen" element={<AppointmentManagement />} />
+          <Route path="nguoi-dung" element={<UserManagement />} />
         </Route>
       </Route>
 
