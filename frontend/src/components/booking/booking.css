@@ -1,0 +1,238 @@
+/* CSS riêng của phần Đặt lịch */
+.bk-card {
+  background: #fff;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.bk-steps {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+.bk-steps li {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #e9ecef;
+  font-size: 13px;
+}
+.bk-steps li.active {
+  background: #0b7285;
+  color: #fff;
+  font-weight: 600;
+}
+.bk-steps li.done {
+  background: #c5f6fa;
+}
+
+.bk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.bk-choice {
+  text-align: left;
+  padding: 12px;
+  background: #fff;
+  border: 2px solid #dde3ea;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+.bk-choice:hover {
+  border-color: #3bc9db;
+}
+.bk-choice.selected {
+  border-color: #0b7285;
+  background: #e3fafc;
+}
+.bk-choice small {
+  display: block;
+  color: #666;
+  margin-top: 4px;
+}
+
+.bk-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+  max-width: 420px;
+}
+.bk-field input,
+.bk-field textarea,
+.bk-field select {
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.bk-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.bk-btn {
+  padding: 8px 16px;
+  border: 1px solid #ced4da;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+.bk-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.bk-btn-primary {
+  background: #0b7285;
+  border-color: #0b7285;
+  color: #fff;
+}
+.bk-btn-danger {
+  background: #e03131;
+  border-color: #e03131;
+  color: #fff;
+}
+.bk-btn-sm {
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+.bk-toast {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.bk-toast.ok {
+  background: #d3f9d8;
+  color: #2b8a3e;
+}
+.bk-toast.err {
+  background: #ffe3e3;
+  color: #c92a2a;
+}
+
+.bk-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.bk-tab {
+  padding: 6px 14px;
+  border: 1px solid #ced4da;
+  background: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+}
+.bk-tab.active {
+  background: #0b7285;
+  color: #fff;
+  border-color: #0b7285;
+}
+
+.bk-table-wrap {
+  overflow-x: auto;
+}
+.bk-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+.bk-table th,
+.bk-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e9ecef;
+  text-align: left;
+  vertical-align: top;
+}
+.bk-table th {
+  background: #f1f3f5;
+  font-size: 13px;
+}
+
+.bk-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.bk-badge.pending {
+  background: #fff3bf;
+  color: #e67700;
+}
+.bk-badge.confirmed {
+  background: #d0ebff;
+  color: #1971c2;
+}
+.bk-badge.completed {
+  background: #d3f9d8;
+  color: #2b8a3e;
+}
+.bk-badge.cancelled {
+  background: #ffe3e3;
+  color: #c92a2a;
+}
+
+.bk-empty,
+.bk-loading {
+  padding: 24px;
+  text-align: center;
+  color: #666;
+}
+
+.bk-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+}
+.bk-modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.bk-modal h3 {
+  margin-top: 0;
+}
+
+.bk-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.bk-stat {
+  background: #fff;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+  padding: 16px;
+}
+.bk-stat b {
+  display: block;
+  font-size: 28px;
+  color: #0b7285;
+}
+.bk-stat span {
+  font-size: 13px;
+  color: #555;
+}
