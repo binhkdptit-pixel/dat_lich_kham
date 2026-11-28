@@ -1,8 +1,15 @@
-export interface Doctor {
+export interface Specialty {
   _id: string;
   name: string;
-  specialty: string;
-  phone?: string;
+  description?: string;
+}
+
+// API công khai chỉ trả tên của User và Specialty, không trả email hay số điện thoại
+export interface Doctor {
+  _id: string;
+  user: { _id?: string; name: string; phone?: string; email?: string };
+  specialty: { _id: string; name: string };
+  experience: number;
   description?: string;
 }
 
