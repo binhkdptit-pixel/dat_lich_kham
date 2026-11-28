@@ -1,0 +1,38 @@
+.dl-filter { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.dl-filter select { padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font: inherit; }
+
+.doctor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.doctor-card {
+  display: block; background: #fff; border: 1px solid #dde3ea; border-radius: 10px;
+  padding: 16px; color: inherit; text-decoration: none;
+}
+.doctor-card:hover { border-color: #0b7285; }
+.doctor-card h3 { margin: 0 0 6px; }
+.doctor-meta { margin: 2px 0; color: #64748b; font-size: 14px; }
+
+.doctor-detail { max-width: 640px; margin-top: 12px; }
+.doctor-book-btn {
+  display: inline-block; margin-top: 12px; padding: 10px 16px; border-radius: 6px;
+  background: #0b7285; color: #fff; text-decoration: none;
+}
+
+.dm-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.dm-toolbar h2 { margin: 0; }
+.dm-form {
+  background: #fff; border: 1px solid #dde3ea; border-radius: 10px; padding: 16px;
+  margin-bottom: 16px; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.dm-form h3 { margin: 0; }
+.dm-field label { display: block; font-size: 13px; color: #475569; margin-bottom: 4px; }
+.dm-field input, .dm-field select, .dm-field textarea {
+  width: 100%; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font: inherit; box-sizing: border-box;
+}
+.dm-field textarea { min-height: 72px; resize: vertical; }
+.dm-full { grid-column: 1 / -1; }
+.dm-actions { grid-column: 1 / -1; display: flex; justify-content: flex-end; gap: 8px; }
+.dm-hint { font-size: 13px; color: #b45309; margin: 0; }
+.dm-link-btn {
+  background: none; border: none; color: #0b7285; cursor: pointer; padding: 0 6px; font: inherit;
+}
+.dm-link-btn:hover { text-decoration: underline; }
+.dm-danger-text { color: #dc2626; }

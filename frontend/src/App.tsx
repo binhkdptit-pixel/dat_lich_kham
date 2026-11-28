@@ -4,6 +4,8 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Profile from "./pages/auth/Profile";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import DoctorList from "./pages/doctors/DoctorList";
+import DoctorDetail from "./pages/doctors/DoctorDetail";
 
 import AdminLayout from "./layouts/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
@@ -25,6 +27,10 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/dang-nhap" element={<Login />} />
       <Route path="/dang-ky" element={<Register />} />
+
+      {/* Trang công khai: ai cũng xem được danh sách và chi tiết bác sĩ */}
+      <Route path="/bac-si" element={<DoctorList />} />
+      <Route path="/bac-si/:id" element={<DoctorDetail />} />
 
       {/* Đã đăng nhập là vào được, mọi vai trò */}
       <Route element={<ProtectedRoute />}>
