@@ -4,6 +4,7 @@ import cors from "cors";
 import authRoutes from "./routes/auth.routes";
 import doctorRoutes from "./routes/doctor.routes";
 import appointmentRoutes from "./routes/appointment.routes";
+import userRoutes from "./routes/user.routes";
 import { notFound } from "./middlewares/notFound";
 import { errorHandler } from "./middlewares/errorHandler";
 import specialtyRoutes from "./routes/specialty.routes";
@@ -21,6 +22,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/doctors", doctorRoutes);
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/stats", statsRoutes);
+app.use("/api/users", userRoutes);
 
 // phải đặt sau tất cả route
 app.use(notFound);

@@ -1,0 +1,7 @@
+.um-toolbar { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 12px; }
+.um-toolbar select { padding: 8px 10px; border: 1px solid #c9d2dc; border-radius: 6px; font-size: 15px; }
+.um-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.um-form { display: flex; flex-direction: column; gap: 10px; min-width: min(420px, 90vw); }
+.um-form label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 600; }
+.um-form input, .um-form select { padding: 8px 10px; border: 1px solid #c9d2dc; border-radius: 6px; font-size: 15px; font-weight: 400; }
+.um-error { color: #c92a2a; margin: 0; font-size: 14px; }
