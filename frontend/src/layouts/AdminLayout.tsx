@@ -8,6 +8,7 @@ export default function AdminLayout() {
         { to: "/admin", label: "Tổng quan", end: true },
         { to: "/admin/bac-si", label: "Quản lý bác sĩ" },
         { to: "/admin/lich-hen", label: "Quản lý lịch hẹn" },
+        { to: "/admin/nguoi-dung", label: "Quản lý người dùng" },
       ]}
     />
   );
